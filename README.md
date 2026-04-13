@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mersiel Web
 
-## Getting Started
+Sitio corporativo de Mersiel construido con Next.js (App Router) y TypeScript.
 
-First, run the development server:
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4 (disponible para utilidades)
+
+## Estructura del proyecto
+
+```text
+src/
+	app/
+	components/
+	lib/
+public/
+	brand/
+	images/
+```
+
+## Desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App local en `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pendientes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [ ] **Vectorizar logos** — Convertir los assets de `public/Logos/` a SVG para poder trazar el contorno exacto de la marca en código.
+- [ ] **Loader de la página** — Construir el loader animado con el logo como base: trazo serpiente que recorre el borde exacto de cada pieza del logotipo. Requiere los SVGs para lograrlo correctamente.
 
-## Learn More
+## Estructura del proyecto
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+	app/
+	components/
+	lib/
+public/
+	brand/
+	images/
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Desarrollo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+App local en `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Pendientes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] **Vectorizar logos** — Convertir los assets de `public/Logos/` a SVG para poder trazar el contorno exacto de la marca en código.
+- [ ] **Loader de la página** — Construir el loader animado con el logo como base: trazo serpiente que recorre el borde exacto de cada pieza del logotipo. Requiere los SVGs para lograrlo correctamente.
+
+## Assets de marca
+
+Sube aqui las versiones oficiales del logo:
+
+- `public/brand/logo-color.svg`
+- `public/brand/logo-white.svg`
+- `public/brand/logo-black.svg`
+
+Y usa rutas absolutas desde raiz web, por ejemplo: `/brand/logo-color.svg`.
+
+## Scripts
+
+- `npm run dev`: modo desarrollo
+- `npm run build`: build produccion
+- `npm run start`: correr build
+- `npm run lint`: lint del proyecto

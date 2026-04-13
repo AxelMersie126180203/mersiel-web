@@ -1,0 +1,292 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 450" fill="none" aria-label="Mersiel spectacle logo animation">
+  <defs>
+    <linearGradient id="leftGrad" x1="282" y1="327" x2="407" y2="106" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4a1fd1" />
+      <stop offset="55%" stop-color="#6f2cde" />
+      <stop offset="100%" stop-color="#8d35e5" />
+    </linearGradient>
+    <linearGradient id="midGrad" x1="440" y1="307" x2="523" y2="135" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7d2fe0" />
+      <stop offset="55%" stop-color="#cf239f" />
+      <stop offset="100%" stop-color="#ff2f92" />
+    </linearGradient>
+    <linearGradient id="rightGrad" x1="491" y1="277" x2="553" y2="225" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff4949" />
+      <stop offset="100%" stop-color="#ff2323" />
+    </linearGradient>
+    <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4a1fd1" stop-opacity="0" />
+      <stop offset="40%" stop-color="#8d35e5" stop-opacity="0.95" />
+      <stop offset="75%" stop-color="#ff2f92" stop-opacity="0.88" />
+      <stop offset="100%" stop-color="#ff2323" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff2f92" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#8d35e5" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#8d35e5" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="heavyGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="8" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <clipPath id="clipLeft">
+      <path d="M 282 327 C 278 319, 278 307, 280 293 C 285 255, 300 220, 320 186 C 338 155, 361 128, 389 106 C 395 103, 403 103, 407 109 C 421 136, 434 165, 444 198 C 422 221, 396 244, 371 265 C 353 280, 334 295, 315 308 C 303 316, 292 323, 282 327 Z" />
+    </clipPath>
+    <clipPath id="clipMid">
+      <path d="M 440 307 C 434 301, 426 287, 420 276 C 416 266, 412 257, 409 247 C 441 213, 474 179, 507 144 C 513 138, 519 133, 523 135 C 527 139, 530 156, 534 174 C 537 190, 539 202, 541 211 C 508 243, 474 275, 440 307 Z" />
+    </clipPath>
+    <clipPath id="clipRight">
+      <path d="M 551 295 C 534 289, 514 284, 491 277 C 493 272, 507 257, 521 243 C 532 233, 541 225, 544 225 C 546 227, 547 239, 548 251 C 550 264, 553 280, 553 291 C 553 293, 552 294, 551 295 Z" />
+    </clipPath>
+
+    <style>
+      .ambient {
+        opacity: 0;
+        animation: ambient 9.8s cubic-bezier(.22,.61,.36,1) infinite;
+      }
+
+      .ring {
+        fill: none;
+        stroke: rgba(255,255,255,0.08);
+        stroke-width: 1;
+        opacity: 0;
+        transform-origin: 420px 225px;
+        animation: ringPhase 9.8s cubic-bezier(.22,.61,.36,1) infinite;
+      }
+      .ring.r2 { animation-delay: .12s; }
+      .ring.r3 { animation-delay: .24s; }
+
+      .beam {
+        fill: url(#beamGrad);
+        opacity: 0;
+        filter: url(#softGlow);
+        transform-origin: 420px 225px;
+        animation: beamSweep 9.8s cubic-bezier(.22,.61,.36,1) infinite;
+      }
+      .beam.b2 { animation-delay: .22s; }
+      .beam.b3 { animation-delay: .44s; }
+
+      .core {
+        opacity: 0;
+        animation: corePulse 9.8s cubic-bezier(.22,.61,.36,1) infinite;
+      }
+
+      .spark {
+        opacity: 0;
+        filter: url(#softGlow);
+        animation: sparkPhase 9.8s cubic-bezier(.22,.61,.36,1) infinite;
+      }
+
+      .buildStrip {
+        rx: 999px;
+        ry: 999px;
+        opacity: 0;
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: stripBuild 9.8s cubic-bezier(.22,.61,.36,1) infinite;
+      }
+      .leftStrip { fill: url(#leftGrad); }
+      .midStrip { fill: url(#midGrad); }
+      .rightStrip { fill: url(#rightGrad); }
+
+      .s1 { animation-delay: 2.2s; }
+      .s2 { animation-delay: 2.35s; }
+      .s3 { animation-delay: 2.5s; }
+      .s4 { animation-delay: 2.65s; }
+      .s5 { animation-delay: 2.8s; }
+      .s6 { animation-delay: 2.95s; }
+      .s7 { animation-delay: 3.05s; }
+      .s8 { animation-delay: 3.18s; }
+      .s9 { animation-delay: 3.31s; }
+      .s10 { animation-delay: 3.44s; }
+      .s11 { animation-delay: 3.56s; }
+      .s12 { animation-delay: 3.69s; }
+      .s13 { animation-delay: 3.82s; }
+
+      .edge {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+        opacity: 0;
+      }
+      .edge.left { stroke: url(#leftGrad); }
+      .edge.mid { stroke: url(#midGrad); }
+      .edge.right { stroke: url(#rightGrad); }
+      .edge.outline {
+        stroke-width: 1.05;
+        animation: edgeOutline 9.8s cubic-bezier(.22,.61,.36,1) infinite;
+      }
+      .edge.runner {
+        stroke-width: 1.6;
+        stroke-dasharray: 34 66;
+        stroke-dashoffset: 100;
+        filter: url(#softGlow);
+        animation: edgeRun 9.8s cubic-bezier(.22,.61,.36,1) infinite;
+      }
+      .runner.mid { animation-delay: .22s; }
+      .runner.right { animation-delay: .44s; }
+
+      .logoShadow {
+        opacity: 0;
+        fill: rgba(141,53,229,0.08);
+        filter: blur(14px);
+        animation: logoShadow 9.8s cubic-bezier(.22,.61,.36,1) infinite;
+      }
+
+      .finalLogo {
+        opacity: 0;
+        transform-origin: 420px 225px;
+        transform-box: fill-box;
+        filter: url(#heavyGlow);
+        animation: logoReveal 9.8s cubic-bezier(.22,.61,.36,1) infinite;
+      }
+
+      @keyframes ambient {
+        0%, 8% { opacity: 0; }
+        18%, 58% { opacity: 1; }
+        76%, 100% { opacity: 0; }
+      }
+
+      @keyframes ringPhase {
+        0%, 6% { opacity: 0; transform: scale(.72); }
+        16% { opacity: .55; transform: scale(1); }
+        30% { opacity: .22; transform: scale(1.08); }
+        42%, 100% { opacity: 0; transform: scale(1.18); }
+      }
+
+      @keyframes beamSweep {
+        0%, 10% { opacity: 0; transform: scaleX(.15) scaleY(.9); }
+        18% { opacity: .95; transform: scaleX(1) scaleY(1); }
+        30% { opacity: .75; }
+        40% { opacity: 0; transform: scaleX(1.08) scaleY(1.02); }
+        100% { opacity: 0; }
+      }
+
+      @keyframes corePulse {
+        0%, 14% { opacity: 0; transform: scale(.3); }
+        22% { opacity: .95; transform: scale(1); }
+        30% { opacity: .55; transform: scale(.72); }
+        38% { opacity: 0; transform: scale(1.5); }
+        100% { opacity: 0; }
+      }
+
+      @keyframes sparkPhase {
+        0%, 22% { opacity: 0; }
+        28% { opacity: .9; }
+        38% { opacity: 0; }
+        100% { opacity: 0; }
+      }
+
+      @keyframes stripBuild {
+        0%, 20% { opacity: 0; transform: translateY(14px) scaleX(.12); }
+        28% { opacity: .96; transform: translateY(0) scaleX(1); }
+        52% { opacity: .96; transform: translateY(0) scaleX(1); }
+        60% { opacity: 0; transform: translateY(-1px) scaleX(1.01); }
+        100% { opacity: 0; }
+      }
+
+      @keyframes edgeOutline {
+        0%, 34% { opacity: 0; }
+        42% { opacity: .34; }
+        60% { opacity: .22; }
+        70%, 100% { opacity: 0; }
+      }
+
+      @keyframes edgeRun {
+        0%, 40% { opacity: 0; stroke-dashoffset: 100; }
+        48% { opacity: 1; }
+        62% { opacity: 1; stroke-dashoffset: 0; }
+        70%, 100% { opacity: 0; stroke-dashoffset: -6; }
+      }
+
+      @keyframes logoReveal {
+        0%, 46% { opacity: 0; transform: scale(.86); }
+        60% { opacity: 1; transform: scale(1.02); }
+        72% { opacity: 1; transform: scale(1); }
+        86% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0; transform: scale(.94); }
+      }
+
+      @keyframes logoShadow {
+        0%, 50% { opacity: 0; transform: scale(.85); }
+        64% { opacity: 1; transform: scale(1); }
+        86% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0; transform: scale(.95); }
+      }
+    </style>
+  </defs>
+
+  <g class="ambient">
+    <ellipse cx="420" cy="225" rx="180" ry="126" fill="url(#coreGlow)" opacity="0.18" />
+    <circle cx="420" cy="225" r="92" class="ring" />
+    <circle cx="420" cy="225" r="118" class="ring r2" />
+    <circle cx="420" cy="225" r="146" class="ring r3" />
+  </g>
+
+  <g>
+    <rect x="268" y="162" width="308" height="8" rx="999" class="beam" transform="rotate(-18 422 166)" />
+    <rect x="286" y="226" width="282" height="7" rx="999" class="beam b2" transform="rotate(8 427 229)" />
+    <rect x="320" y="124" width="216" height="6" rx="999" class="beam b3" transform="rotate(42 428 127)" />
+    <circle cx="420" cy="225" r="16" fill="url(#coreGlow)" class="core" />
+  </g>
+
+  <g>
+    <circle cx="344" cy="168" r="3.2" fill="url(#leftGrad)" class="spark" />
+    <circle cx="514" cy="174" r="2.8" fill="url(#midGrad)" class="spark" style="animation-delay:.08s" />
+    <circle cx="304" cy="246" r="2.6" fill="url(#leftGrad)" class="spark" style="animation-delay:.15s" />
+    <circle cx="534" cy="245" r="2.8" fill="url(#midGrad)" class="spark" style="animation-delay:.21s" />
+    <circle cx="459" cy="113" r="2.6" fill="url(#midGrad)" class="spark" style="animation-delay:.3s" />
+    <circle cx="565" cy="225" r="2.4" fill="url(#rightGrad)" class="spark" style="animation-delay:.36s" />
+  </g>
+
+  <g clip-path="url(#clipLeft)">
+    <rect x="248" y="286" width="144" height="4.2" class="buildStrip leftStrip s1" />
+    <rect x="258" y="268" width="138" height="4.2" class="buildStrip leftStrip s2" />
+    <rect x="266" y="250" width="130" height="4.2" class="buildStrip leftStrip s3" />
+    <rect x="276" y="232" width="120" height="4.2" class="buildStrip leftStrip s4" />
+    <rect x="287" y="212" width="110" height="4.2" class="buildStrip leftStrip s5" />
+    <rect x="300" y="191" width="96" height="4.2" class="buildStrip leftStrip s6" />
+  </g>
+
+  <g clip-path="url(#clipMid)">
+    <rect x="408" y="270" width="120" height="4.2" transform="rotate(-48 468 272)" class="buildStrip midStrip s7" />
+    <rect x="418" y="250" width="112" height="4.2" transform="rotate(-48 474 252)" class="buildStrip midStrip s8" />
+    <rect x="428" y="230" width="104" height="4.2" transform="rotate(-48 480 232)" class="buildStrip midStrip s9" />
+    <rect x="440" y="210" width="90" height="4.2" transform="rotate(-48 485 212)" class="buildStrip midStrip s10" />
+  </g>
+
+  <g clip-path="url(#clipRight)">
+    <rect x="492" y="270" width="58" height="3.8" transform="rotate(-15 521 272)" class="buildStrip rightStrip s11" />
+    <rect x="500" y="254" width="50" height="3.8" transform="rotate(-15 525 256)" class="buildStrip rightStrip s12" />
+    <rect x="508" y="238" width="40" height="3.8" transform="rotate(-15 528 240)" class="buildStrip rightStrip s13" />
+  </g>
+
+  <path class="edge outline left" d="M 282 327 C 278 319, 278 307, 280 293 C 285 255, 300 220, 320 186 C 338 155, 361 128, 389 106 C 395 103, 403 103, 407 109 C 421 136, 434 165, 444 198 C 422 221, 396 244, 371 265 C 353 280, 334 295, 315 308 C 303 316, 292 323, 282 327 Z" />
+  <path class="edge outline mid" d="M 440 307 C 434 301, 426 287, 420 276 C 416 266, 412 257, 409 247 C 441 213, 474 179, 507 144 C 513 138, 519 133, 523 135 C 527 139, 530 156, 534 174 C 537 190, 539 202, 541 211 C 508 243, 474 275, 440 307 Z" />
+  <path class="edge outline right" d="M 551 295 C 534 289, 514 284, 491 277 C 493 272, 507 257, 521 243 C 532 233, 541 225, 544 225 C 546 227, 547 239, 548 251 C 550 264, 553 280, 553 291 C 553 293, 552 294, 551 295 Z" />
+
+  <path class="edge runner left" pathLength="100" d="M 282 327 C 278 319, 278 307, 280 293 C 285 255, 300 220, 320 186 C 338 155, 361 128, 389 106 C 395 103, 403 103, 407 109 C 421 136, 434 165, 444 198 C 422 221, 396 244, 371 265 C 353 280, 334 295, 315 308 C 303 316, 292 323, 282 327 Z" />
+  <path class="edge runner mid" pathLength="100" d="M 440 307 C 434 301, 426 287, 420 276 C 416 266, 412 257, 409 247 C 441 213, 474 179, 507 144 C 513 138, 519 133, 523 135 C 527 139, 530 156, 534 174 C 537 190, 539 202, 541 211 C 508 243, 474 275, 440 307 Z" />
+  <path class="edge runner right" pathLength="100" d="M 551 295 C 534 289, 514 284, 491 277 C 493 272, 507 257, 521 243 C 532 233, 541 225, 544 225 C 546 227, 547 239, 548 251 C 550 264, 553 280, 553 291 C 553 293, 552 294, 551 295 Z" />
+
+  <ellipse class="logoShadow" cx="418" cy="333" rx="118" ry="16" />
+
+  <g class="finalLogo">
+    <path fill="url(#leftGrad)" d="M 282 327 C 278 319, 278 307, 280 293 C 285 255, 300 220, 320 186 C 338 155, 361 128, 389 106 C 395 103, 403 103, 407 109 C 421 136, 434 165, 444 198 C 422 221, 396 244, 371 265 C 353 280, 334 295, 315 308 C 303 316, 292 323, 282 327 Z" />
+    <path fill="url(#midGrad)" d="M 440 307 C 434 301, 426 287, 420 276 C 416 266, 412 257, 409 247 C 441 213, 474 179, 507 144 C 513 138, 519 133, 523 135 C 527 139, 530 156, 534 174 C 537 190, 539 202, 541 211 C 508 243, 474 275, 440 307 Z" />
+    <path fill="url(#rightGrad)" d="M 551 295 C 534 289, 514 284, 491 277 C 493 272, 507 257, 521 243 C 532 233, 541 225, 544 225 C 546 227, 547 239, 548 251 C 550 264, 553 280, 553 291 C 553 293, 552 294, 551 295 Z" />
+  </g>
+</svg>
