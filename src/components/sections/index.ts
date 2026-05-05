@@ -1,7 +1,11 @@
 export { HeroSection } from "./hero-section";
+export { ProblemSection } from "./problem-section";
 export { CapabilitiesSection } from "./capabilities-section";
-export { ShowcaseSection } from "./showcase-section";
+export { DifferentiatorSection } from "./differentiator-section";
 export { ProcessSection } from "./process-section";
-export { ValuesSection } from "./values-section";
+export { TrustSection } from "./trust-section";
+export { AboutSection } from "./about-section";
 export { ManifestoSection } from "./manifesto-section";
+export { ShowcaseSection } from "./showcase-section";
+export { ValuesSection } from "./values-section";
 export { ClosingSection } from "./closing-section";

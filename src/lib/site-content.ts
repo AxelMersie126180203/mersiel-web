@@ -1,66 +1,62 @@
 export const mision = {
   label: "Misión",
   title: "¿Para qué existe Mersiel?",
-  body: "Impulsar el crecimiento de negocios y empresas mediante el desarrollo de soluciones digitales a medida, optimizando sus procesos a través de software, aplicaciones móviles y sistemas web de alta calidad.",
+  body: "Impulsar el crecimiento de negocios mediante el desarrollo de soluciones digitales a medida, optimizando sus procesos a través de software, automatizaciones y sistemas web pensados para resultados reales.",
 };
 
 export const vision = {
   label: "Visión",
   title: "¿A dónde vamos?",
-  body: "Consolidarnos como el aliado tecnológico de confianza para los negocios, siendo reconocidos por nuestra capacidad de resolver problemas reales y ayudar a nuestros clientes a evolucionar a través de la tecnología.",
+  body: "Consolidarnos como el aliado tecnológico de confianza para los negocios, siendo reconocidos por nuestra capacidad de resolver problemas reales y ayudar a nuestros clientes a crecer a través de la tecnología.",
 };
 
 export const navLinks = [
-  { href: "/#servicios", label: "Capacidades" },
-  { href: "/#soluciones", label: "Arquitectura" },
-  { href: "/#metodo", label: "Método" },
-  { href: "/#estandares", label: "Estándares" },
-  { href: "/#contacto", label: "Evaluación" },
+  { href: "/#servicios", label: "Servicios" },
+  { href: "/#proceso", label: "Proceso" },
+  { href: "/#nosotros", label: "Nosotros" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export const heroStats = [
   {
-    value: "Precisión técnica",
-    label: "Ingeniería de primer nivel",
+    value: "Arquitectura",
   },
   {
-    value: "Operación escalable",
-    label: "Estructuras sin bloqueos",
+    value: "Lógica",
   },
   {
-    value: "Control absoluto",
-    label: "Propiedad sobre tu producto",
+    value: "Escalabilidad",
   },
 ];
 
 export const services = [
   {
     index: "01",
-    title: "Software a medida",
+    title: "Automatización de procesos",
     description:
-      "Arquitectura diseñada para operar bajo las reglas exactas de cada métrica de negocio, eliminando la fricción de herramientas genéricas.",
-    tags: ["Desarrollo de Sistemas", "Lógica Core"],
+      "Eliminamos tareas repetitivas para que tu negocio funcione más rápido y con menos errores.",
+    tags: ["Flujos automáticos", "Menos errores"],
   },
   {
     index: "02",
-    title: "Plataformas interactivas",
+    title: "Software a medida",
     description:
-      "Desarrollo de interfaces y portales web orientados a la claridad de uso, con un rendimiento técnico inmediato y estable.",
-    tags: ["UX Exigente", "Front-end"],
+      "Creamos sistemas diseñados específicamente para tu forma de trabajar.",
+    tags: ["Sistemas propios", "Sin limitaciones"],
   },
   {
     index: "03",
-    title: "Automatización",
+    title: "Integraciones",
     description:
-      "Integración lógica de flujos operativos para conectar sistemas externos, reduciendo horas de trabajo manual y margen de error.",
-    tags: ["Comunicación API", "Background"],
+      "Conectamos tus herramientas para que todo fluya en un solo lugar.",
+    tags: ["APIs", "Sincronización"],
   },
   {
     index: "04",
-    title: "Sistemas internos",
+    title: "Desarrollo web estratégico",
     description:
-      "Creación de entornos de gestión exclusivos para agilizar la administración de activos, reportes y control del equipo.",
-    tags: ["Back-office", "Dashboards"],
+      "No solo páginas, sino herramientas que realmente generan resultados.",
+    tags: ["Resultados reales", "Estrategia digital"],
   },
 ];
 
@@ -87,38 +83,45 @@ export const featuredWork = [
 
 export const processSteps = [
   {
-    step: "Diagnóstico de viabilidad",
+    step: "Entendemos tu negocio",
     description:
-      "Mapeo de reglas de negocio, identificación de cuellos de botella y diseño de requerimientos técnicos previos al inicio del código.",
+      "Analizamos cómo trabajas y detectamos oportunidades de mejora.",
   },
   {
-    step: "Diseño de sistema",
+    step: "Diseñamos la solución",
     description:
-      "Selección rigorosa de stack tecnológico, modelado de bases de datos y planificación arquitectónica enfocada en seguridad.",
+      "Proponemos una herramienta clara y funcional que se adapta a ti.",
   },
   {
-    step: "Ciclos de desarrollo",
+    step: "Desarrollamos",
     description:
-      "Ejecución precisa mediante entregas iterativas. Seguimiento constante del proceso y revisión profunda en cada fase terminada.",
+      "Construimos el sistema adaptado a tus necesidades reales.",
   },
   {
-    step: "Despliegue y continuidad",
+    step: "Implementamos y mejoramos",
     description:
-      "Lanzamiento controlado en servidores dedicados de alto rendimiento, asegurando estabilidad y preparación para escalado inmediato.",
+      "Lo ponemos en marcha y lo optimizamos contigo en el tiempo.",
   },
 ];
 
 export const trustPoints = [
   {
-    title: "Asimetría cero",
-    text: "El diálogo es técnico y conciso. Evitamos Account Managers intermedios; en Mersiel hablas directamente con quienes construyen el software.",
+    title: "Enfoque en resultados reales",
+    text: "Cada proyecto lo desarrollamos priorizando funcionalidad, claridad y crecimiento a largo plazo. No trabajamos por trabajar.",
   },
   {
-    title: "Propiedad legal absoluta",
-    text: "Tu inversión es tuya. Las bases de datos, los repositorios de código y la arquitectura construida pertenecen totalmente a tu dominio.",
+    title: "Soluciones que hacen diferencia",
+    text: "Estamos enfocados en construir herramientas que realmente impacten la operación de cada negocio, no solo su apariencia.",
   },
   {
-    title: "Disciplina comprobable",
-    text: "El software no puede ser una caja negra. Aportamos visibilidad con decisiones técnicas justificables, limpias y altamente estructuradas.",
+    title: "Comunicación directa",
+    text: "Sin intermediarios. Hablas directamente con quienes construyen el software, para que nada se pierda en la traducción.",
   },
+];
+
+export const differentiatorPoints = [
+  "Entendemos tu negocio antes de escribir una sola línea de código",
+  "Desarrollamos tecnología que se adapta a ti, no al revés",
+  "Nuestro enfoque no es solo programar, es ayudarte a crecer",
+  "Sin soluciones genéricas ni plantillas prefabricadas",
 ];

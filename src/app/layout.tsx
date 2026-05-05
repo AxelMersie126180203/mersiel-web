@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { SiteLoader } from "@/components/layout/site-loader";
 import { Manrope, Montserrat, Teko } from "next/font/google";
 import "./globals.css";
 
@@ -24,9 +23,9 @@ const accentFont = Teko({
 });
 
 export const metadata: Metadata = {
-  title: "Mersiel | Software de Autor",
+  title: "Mersiel | Desarrollo de Software",
   description:
-    "Mersiel crea software de autor con estandares de excelencia global, claridad y respeto al talento.",
+    "Mersiel crea software a medida para negocios que buscan crecer con soluciones claras, funcionales y bien ejecutadas.",
 };
 
 export default function RootLayout({
@@ -36,11 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: `if(sessionStorage.getItem("mersiel_intro_seen")==="true") document.documentElement.classList.add("skip-intro");` }} />
-      </head>
       <body className={`${displayFont.variable} ${bodyFont.variable} ${accentFont.variable} antialiased`}>
-        <SiteLoader />
         <div className="site-shell">
           <main className="site">
             <SiteHeader />

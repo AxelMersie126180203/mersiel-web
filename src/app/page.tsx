@@ -1,22 +1,24 @@
 import {
-  CapabilitiesSection,
-  ClosingSection,
   HeroSection,
-  ManifestoSection,
+  ProblemSection,
+  CapabilitiesSection,
+  DifferentiatorSection,
   ProcessSection,
-  ShowcaseSection,
-  ValuesSection,
+  TrustSection,
+  AboutSection,
+  ClosingSection,
 } from "@/components/sections";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
+      <ProblemSection />
       <CapabilitiesSection />
-      <ShowcaseSection />
+      <DifferentiatorSection />
       <ProcessSection />
-      <ValuesSection />
-      <ManifestoSection />
+      <TrustSection />
+      <AboutSection />
       <ClosingSection />
     </>
   );
