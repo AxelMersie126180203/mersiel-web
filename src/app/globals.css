@@ -957,6 +957,20 @@ img {
   position: relative;
 }
 
+.hero,
+.problem-section,
+.capabilities-section,
+.differentiator-section,
+.process-section,
+.trust-section,
+.about-section,
+.closing-cta {
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
+  scroll-margin-top: calc(var(--header-h) + 0.8rem);
+}
+
 .capabilities-section::before,
 .showcase::before,
 .values-section::before,
@@ -977,7 +991,7 @@ img {
 .hero {
   position: relative;
   width: 100%;
-  min-height: auto;
+  min-height: 100svh;
   overflow: hidden;
   padding: 0;
 }
@@ -998,7 +1012,8 @@ img {
   display: grid;
   grid-template-rows: auto auto;
   gap: 1.5rem;
-  min-height: auto;
+  min-height: 100svh;
+  align-content: center;
   width: calc(100% - (var(--edge-gap) * 2));
   margin-left: auto;
   margin-right: auto;
@@ -1464,8 +1479,8 @@ img {
 .values-section,
 .process-section,
 .manifesto {
-  padding-top: 0.5rem;
-  padding-bottom: 3rem;
+  padding-top: clamp(4.5rem, 9vh, 7rem);
+  padding-bottom: clamp(3rem, 7vh, 5.5rem);
 }
 
 .capabilities-intro {
@@ -2106,13 +2121,15 @@ img {
   z-index: 0;
 }
 
-.problem-bg-visual svg {
-  position: absolute;
-  right: -20px;
-  bottom: -10px;
-  width: min(440px, 70%);
-  height: auto;
-  opacity: 0.22;
+.problem-bg-visual img {
+  position: absolute !important;
+  right: -20px !important;
+  bottom: -10px !important;
+  left: auto !important;
+  top: auto !important;
+  width: min(440px, 70%) !important;
+  height: auto !important;
+  opacity: 0.35;
   mask-image: radial-gradient(ellipse 80% 90% at 80% 60%, black 20%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 80% 90% at 80% 60%, black 20%, transparent 75%);
 }

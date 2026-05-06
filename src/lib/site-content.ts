@@ -32,31 +32,31 @@ export const heroStats = [
 export const services = [
   {
     index: "01",
-    title: "Automatización de procesos",
+    title: "Desarrollo de aplicaciones móviles",
     description:
-      "Eliminamos tareas repetitivas para que tu negocio funcione más rápido y con menos errores.",
-    tags: ["Flujos automáticos", "Menos errores"],
+      "Creamos aplicaciones para iOS y Android diseñadas para tu negocio: intuitivas, rápidas y listas para escalar.",
+    tags: ["iOS & Android", "Diseño a medida"],
   },
   {
     index: "02",
-    title: "Software a medida",
+    title: "Desarrollo web",
     description:
-      "Creamos sistemas diseñados específicamente para tu forma de trabajar.",
-    tags: ["Sistemas propios", "Sin limitaciones"],
+      "Construimos sitios web y plataformas digitales que representan tu negocio y convierten visitantes en clientes.",
+    tags: ["Sitios & plataformas", "Enfocado en resultados"],
   },
   {
     index: "03",
-    title: "Integraciones",
+    title: "Software para agilizar procesos",
     description:
-      "Conectamos tus herramientas para que todo fluya en un solo lugar.",
-    tags: ["APIs", "Sincronización"],
+      "Desarrollamos herramientas internas que automatizan lo manual, conectan tus áreas y hacen que tu operación funcione mejor.",
+    tags: ["Automatización", "Más eficiencia"],
   },
   {
     index: "04",
-    title: "Desarrollo web estratégico",
+    title: "Sistemas de gestión",
     description:
-      "No solo páginas, sino herramientas que realmente generan resultados.",
-    tags: ["Resultados reales", "Estrategia digital"],
+      "Inventario, ventas, clientes o lo que necesites centralizar: lo construimos a tu medida para que tengas control total.",
+    tags: ["Control total", "Sin hojas de cálculo"],
   },
 ];
 
