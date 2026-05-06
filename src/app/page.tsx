@@ -6,7 +6,6 @@ import {
   StatsSection,
   GallerySection,
   CommitmentsSection,
-  AboutSection,
   ClosingSection,
 } from "@/components/sections";
 
@@ -20,7 +19,6 @@ export default function Home() {
       <StatsSection />
       <GallerySection />
       <CommitmentsSection />
-      <AboutSection />
       <ClosingSection />
     </>
   );

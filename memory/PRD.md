@@ -22,6 +22,16 @@ preservar menú lateral (con su preview por tabs), contenido honesto y profesion
 
 ## What's been implemented (mayo 2026)
 
+### v2 — Mascota AI + responsiveness + hero rediseñado
+- **`MersielMascot`** componente flotante (Lumi): aparece tras 4.5s, peek pulsante, click abre burbuja con tips contextuales por ruta (`/`, `/sobre`, `/servicios`, etc.), navegación con CTAs, paginación de tips, opción de ocultar (persistida en localStorage), botón discreto para reactivar.
+- **Hero rediseñado**: parallax con `useScroll/useTransform` (logo, texto, mascota se mueven a distintas velocidades), eyebrow con dots animados, slogan reducido, badges "100% código a medida / Sin plantillas / Comunicación 1:1", mascota decorativa flotando en hero, fade suave (`hero-bottom-fade`) en lugar de línea negra al pasar a la siguiente sección.
+- **ProblemSection v2**: redesigned a 3 píldoras horizontales con iconos lucide (Procesos manuales, Herramientas sueltas, Soluciones genéricas) en lugar de un único bloque de texto largo.
+- **Responsiveness completo**: mobile (390px), tablet (768px), desktop (1440px). Hero badges, CTAs full-width en móvil, mascota deco oculta en móvil, page-hero ajustado, plans/stats/gallery cards apilan correctamente.
+- Eliminado `min-height: 100svh` forzado en secciones intermedias (ya no se ve el "vacío negro").
+
+### v1 — Estructura inicial
+- 4 nuevas páginas con anchors `#seccion`: `/sobre`, `/servicios`, `/proyectos`, `/herramientas`
+
 ### Core
 - 4 nuevas páginas con anchors `#seccion` para que el menú lateral lleve al sitio correcto
 - `PageHero` reutilizable con orbs animados, grid de fondo, gradiente personalizado por accent
