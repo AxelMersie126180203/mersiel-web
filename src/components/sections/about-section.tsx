@@ -1,10 +1,20 @@
+"use client";
+
+import { Reveal } from "@/components/motion/reveal";
+import { motion } from "framer-motion";
+
+const tags = [
+  "Menos caos, más claridad",
+  "Tecnología que sí entiendes",
+  "Hecho a la medida",
+  "Resultados reales",
+];
+
 export function AboutSection() {
   return (
     <section className="about-section" id="nosotros">
       <div className="about-inner">
-
-        {/* Left: copy + tags */}
-        <div className="about-copy fade-up fade-delay-2">
+        <Reveal className="about-copy" y={22}>
           <p className="eyebrow">Sobre Mersiel</p>
           <h2 className="about-title">
             Tecnología que no complica, que facilita.
@@ -19,36 +29,49 @@ export function AboutSection() {
             el crecimiento real.
           </p>
           <div className="about-tags">
-            <span className="about-tag">Menos caos, más claridad</span>
-            <span className="about-tag">Tecnología que sí entiendes</span>
-            <span className="about-tag">Hecho a la medida</span>
-            <span className="about-tag">Resultados reales</span>
+            {tags.map((t, i) => (
+              <motion.span
+                key={t}
+                className="about-tag"
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.45, delay: 0.2 + i * 0.07 }}
+                whileHover={{ y: -3, borderColor: "rgba(216, 27, 96, 0.55)" }}
+              >
+                {t}
+              </motion.span>
+            ))}
           </div>
-        </div>
+        </Reveal>
 
-        {/* Right: image placeholder — replace with team photo or workspace */}
-        <div className="img-placeholder img-placeholder--tall fade-up fade-delay-3" aria-hidden="true">
-          <span className="img-placeholder__badge">Imagen</span>
-          <svg
-            className="img-placeholder__icon"
-            width="52" height="52"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-          </svg>
-          <p className="img-placeholder__label">
-            Foto del equipo de Mersiel o espacio de trabajo / ambiente de desarrollo
-          </p>
-        </div>
-
+        <Reveal y={28} delay={0.15}>
+          <div className="about-visual" aria-hidden>
+            <motion.div
+              className="about-visual-orb"
+              animate={{ scale: [1, 1.08, 1], rotate: [0, 10, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="about-visual-orb about-visual-orb--2"
+              animate={{ scale: [1, 1.12, 1], rotate: [0, -8, 0] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <div className="about-visual-lines">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <motion.span
+                  key={i}
+                  className="about-visual-line"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.8, delay: 0.3 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                />
+              ))}
+            </div>
+            <div className="about-visual-badge">Mersiel · 2026</div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

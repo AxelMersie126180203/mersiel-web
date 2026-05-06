@@ -24,19 +24,19 @@ type MenuLink = {
 
 const sobreLinks: MenuLink[] = [
   {
-    href: "/#inicio",
+    href: "/sobre#mision",
     label: "Misión",
     previewKey: "mision",
     preview: mision,
   },
   {
-    href: "/#filosofia",
+    href: "/sobre#vision",
     label: "Visión",
     previewKey: "vision",
     preview: vision,
   },
   {
-    href: "/#metodo",
+    href: "/sobre#metodo",
     label: "Método",
     previewKey: "metodo",
     preview: {
@@ -46,17 +46,7 @@ const sobreLinks: MenuLink[] = [
     },
   },
   {
-    href: "/#contacto",
-    label: "Contacto",
-    previewKey: "contacto",
-    preview: {
-      label: "Contacto",
-      title: "Hablemos de tu proyecto.",
-      body: "Abrimos la conversación con criterio técnico, entendiendo la operación primero para proponer una solución realista y precisa.",
-    },
-  },
-  {
-    href: "/#diferenciador",
+    href: "/sobre#por-que",
     label: "¿Por qué Mersiel?",
     previewKey: "diferenciador",
     preview: {
@@ -70,11 +60,21 @@ const sobreLinks: MenuLink[] = [
       ],
     },
   },
+  {
+    href: "/#contacto",
+    label: "Contacto",
+    previewKey: "contacto",
+    preview: {
+      label: "Contacto",
+      title: "Hablemos de tu proyecto.",
+      body: "Abrimos la conversación con criterio técnico, entendiendo la operación primero para proponer una solución realista y precisa.",
+    },
+  },
 ];
 
 const tabNavLinks: Record<Exclude<MenuTab, "sobre">, MenuLink[]> = {
   servicios: services.map((service, index) => ({
-    href: "/#servicios",
+    href: `/servicios#desarrollo`,
     label: service.title,
     previewKey: `servicio-${index + 1}`,
     preview: {
@@ -84,7 +84,7 @@ const tabNavLinks: Record<Exclude<MenuTab, "sobre">, MenuLink[]> = {
     },
   })),
   proyectos: featuredWork.map((work, index) => ({
-    href: "/#proyectos",
+    href: "/proyectos#casos",
     label: work.title,
     previewKey: `proyecto-${index + 1}`,
     preview: {
@@ -95,7 +95,7 @@ const tabNavLinks: Record<Exclude<MenuTab, "sobre">, MenuLink[]> = {
   })),
   herramientas: [
     {
-      href: "/#herramientas",
+      href: "/herramientas#lista",
       label: "Web",
       previewKey: "herramienta-web",
       preview: {
@@ -105,7 +105,7 @@ const tabNavLinks: Record<Exclude<MenuTab, "sobre">, MenuLink[]> = {
       },
     },
     {
-      href: "/#herramientas",
+      href: "/herramientas#lista",
       label: "Apps móviles",
       previewKey: "herramienta-apks",
       preview: {
@@ -115,7 +115,7 @@ const tabNavLinks: Record<Exclude<MenuTab, "sobre">, MenuLink[]> = {
       },
     },
     {
-      href: "/#herramientas",
+      href: "/herramientas#lista",
       label: "Automatizaciones",
       previewKey: "herramienta-automations",
       preview: {
@@ -125,7 +125,7 @@ const tabNavLinks: Record<Exclude<MenuTab, "sobre">, MenuLink[]> = {
       },
     },
     {
-      href: "/#herramientas",
+      href: "/herramientas#lista",
       label: "Lanzamientos",
       previewKey: "herramienta-launches",
       preview: {

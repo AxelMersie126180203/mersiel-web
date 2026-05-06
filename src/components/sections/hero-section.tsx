@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Aurora from "@/components/ui/aurora";
 import { heroStats } from "@/lib/site-content";
+import { Magnetic } from "@/components/motion/magnetic";
 
 const heroBackgroundIcons = [
   { type: "database", top: "12%", left: "20%", size: 28, opacity: 0.34, duration: "24s", delay: "-6s" },
@@ -8,12 +12,10 @@ const heroBackgroundIcons = [
   { type: "terminal", top: "13%", left: "63%", size: 31, opacity: 0.35, duration: "23s", delay: "-7s" },
   { type: "api", top: "10%", left: "78%", size: 29, opacity: 0.36, duration: "22s", delay: "-10s" },
   { type: "nodes", top: "16%", left: "90%", size: 26, opacity: 0.34, duration: "25s", delay: "-12s" },
-
   { type: "server", top: "27%", left: "8%", size: 26, opacity: 0.35, duration: "26s", delay: "-5s" },
   { type: "code", top: "31%", left: "22%", size: 24, opacity: 0.32, duration: "18s", delay: "-11s" },
   { type: "chip", top: "27%", left: "70%", size: 30, opacity: 0.37, duration: "24s", delay: "-15s" },
   { type: "terminal", top: "33%", left: "84%", size: 24, opacity: 0.31, duration: "19s", delay: "-6s" },
-
   { type: "api", top: "49%", left: "5%", size: 28, opacity: 0.34, duration: "21s", delay: "-9s" },
   { type: "nodes", top: "52%", left: "18%", size: 26, opacity: 0.36, duration: "25s", delay: "-3s" },
   { type: "server", top: "55%", left: "33%", size: 29, opacity: 0.35, duration: "23s", delay: "-12s" },
@@ -21,7 +23,6 @@ const heroBackgroundIcons = [
   { type: "database", top: "53%", left: "64%", size: 31, opacity: 0.38, duration: "27s", delay: "-8s" },
   { type: "cloud", top: "50%", left: "79%", size: 27, opacity: 0.35, duration: "21s", delay: "-16s" },
   { type: "chip", top: "54%", left: "92%", size: 24, opacity: 0.31, duration: "24s", delay: "-10s" },
-
   { type: "terminal", top: "71%", left: "11%", size: 30, opacity: 0.36, duration: "22s", delay: "-18s" },
   { type: "api", top: "76%", left: "25%", size: 26, opacity: 0.34, duration: "19s", delay: "-4s" },
   { type: "nodes", top: "74%", left: "42%", size: 28, opacity: 0.37, duration: "26s", delay: "-7s" },
@@ -40,7 +41,6 @@ function SoftwareBgIcon({ type }: { type: string }) {
       </svg>
     );
   }
-
   if (type === "cloud") {
     return (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -48,7 +48,6 @@ function SoftwareBgIcon({ type }: { type: string }) {
       </svg>
     );
   }
-
   if (type === "chip") {
     return (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -58,7 +57,6 @@ function SoftwareBgIcon({ type }: { type: string }) {
       </svg>
     );
   }
-
   if (type === "terminal") {
     return (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -67,7 +65,6 @@ function SoftwareBgIcon({ type }: { type: string }) {
       </svg>
     );
   }
-
   if (type === "api") {
     return (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -77,7 +74,6 @@ function SoftwareBgIcon({ type }: { type: string }) {
       </svg>
     );
   }
-
   if (type === "nodes") {
     return (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -88,7 +84,6 @@ function SoftwareBgIcon({ type }: { type: string }) {
       </svg>
     );
   }
-
   if (type === "server") {
     return (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -98,7 +93,6 @@ function SoftwareBgIcon({ type }: { type: string }) {
       </svg>
     );
   }
-
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden>
       <path d="M7 5 3 9l4 4M17 5l4 4-4 4M10.8 17.2l2.6-12.9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -117,7 +111,6 @@ function MetricIcon({ index }: { index: number }) {
       </svg>
     );
   }
-
   if (index === 1) {
     return (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -127,7 +120,6 @@ function MetricIcon({ index }: { index: number }) {
       </svg>
     );
   }
-
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden>
       <path d="M4 16v4h4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
@@ -136,6 +128,8 @@ function MetricIcon({ index }: { index: number }) {
     </svg>
   );
 }
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export function HeroSection() {
   return (
@@ -161,36 +155,88 @@ export function HeroSection() {
         ))}
       </div>
       <div className="hero-noise" aria-hidden />
+
       <div className="hero-inner">
         <div className="hero-stage">
-          <div className="hero-copy fade-up fade-delay-2">
-            <Image
-              src="/Logos/mersiel-spectacle-intro.svg"
-              alt="Mersiel"
-              width={760}
-              height={450}
-              priority
-              className="hero-spectacle"
-            />
-            <p className="eyebrow">Soluciones digitales a medida</p>
-            <h1 className="hero-brand-title">Mersiel</h1>
-            <p className="hero-brand-slogan">Soluciones digitales a medida para negocios que buscan crecer y optimizar sus procesos.</p>
-            <div className="hero-actions fade-up fade-delay-3" style={{ justifyContent: "center" }}>
-              <a href="#contacto" className="btn btn-primary">Iniciar Proyecto</a>
-              <a href="#servicios" className="btn btn-ghost">Nuestros Servicios</a>
-            </div>
+          <div className="hero-copy">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.86 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.1, ease }}
+            >
+              <Image
+                src="/Logos/mersiel-spectacle-intro.svg"
+                alt="Mersiel"
+                width={760}
+                height={450}
+                priority
+                className="hero-spectacle"
+              />
+            </motion.div>
+
+            <motion.p
+              className="eyebrow"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25, ease }}
+            >
+              Soluciones digitales a medida
+            </motion.p>
+
+            <motion.h1
+              className="hero-brand-title"
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.4, ease }}
+            >
+              Mersiel
+            </motion.h1>
+
+            <motion.p
+              className="hero-brand-slogan"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.6, ease }}
+            >
+              Soluciones digitales a medida para negocios que buscan crecer y optimizar sus procesos.
+            </motion.p>
+
+            <motion.div
+              className="hero-actions"
+              style={{ justifyContent: "center" }}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.8, ease }}
+            >
+              <Magnetic href="#contacto">
+                <span className="btn btn-primary">Iniciar Proyecto</span>
+              </Magnetic>
+              <Magnetic href="#servicios">
+                <span className="btn btn-ghost">Nuestros Servicios</span>
+              </Magnetic>
+            </motion.div>
           </div>
         </div>
 
-        <div className="hero-footer fade-up fade-delay-3">
+        <motion.div
+          className="hero-footer"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 1.0, ease }}
+        >
           <div className="metrics-strip">
             {heroStats.map((metric, index) => (
-              <div className="metrics-strip__item" key={metric.value}>
+              <motion.div
+                className="metrics-strip__item"
+                key={metric.value}
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
                 <span className="metrics-strip__icon">
                   <MetricIcon index={index} />
                 </span>
                 <span className="metrics-strip__value">{metric.value}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -198,7 +244,7 @@ export function HeroSection() {
             <span className="hero-scroll-cue__label">Explorar</span>
             <span className="hero-scroll-cue__line" aria-hidden />
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

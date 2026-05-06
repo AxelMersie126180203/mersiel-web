@@ -2,9 +2,10 @@ import {
   HeroSection,
   ProblemSection,
   CapabilitiesSection,
-  DifferentiatorSection,
-  ProcessSection,
-  TrustSection,
+  ServiceModelsSection,
+  StatsSection,
+  GallerySection,
+  CommitmentsSection,
   AboutSection,
   ClosingSection,
 } from "@/components/sections";
@@ -15,9 +16,10 @@ export default function Home() {
       <HeroSection />
       <ProblemSection />
       <CapabilitiesSection />
-      <DifferentiatorSection />
-      <ProcessSection />
-      <TrustSection />
+      <ServiceModelsSection />
+      <StatsSection />
+      <GallerySection />
+      <CommitmentsSection />
       <AboutSection />
       <ClosingSection />
     </>
